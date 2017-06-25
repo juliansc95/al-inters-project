@@ -1,0 +1,14 @@
+<div class="col-md-12" >
+    <div class="col-md-4" *ngFor="let person of persons ">
+      <a [routerLink]="['/person', person.id]" title="{{ person.name }}" ng-if="person.profile_path">
+         <img id="img-list" src="{{getImgUrl(person.profile_path)}}" alt="Poster of actor: {{person.name}}" width="50%" height="50%" />
+        <span class="subtittle">
+           <p class="subtittle-text">
+               {{person.name}}
+           </p>
+       </span>
+    </a>    
+    </div>
+</div>
+
+

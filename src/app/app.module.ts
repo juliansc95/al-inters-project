@@ -17,13 +17,19 @@ import { TmdbService } from './services/tmdb.service';
 import { TmdbImageService } from './services/tmdb-image.service';
 
 import { AppComponent } from './app.component';
+import {NavbarComponent} from './navbar/navbar.component'
+import {HomeComponent} from './home/home.component'
 import {PopularMoviesComponent} from './popular-movies/popular-movies.component'
+import {PopularActorsComponent} from './popular-actors/popular-actors.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
+    HomeComponent,
     PopularMoviesComponent,
+    PopularActorsComponent,
   ],
   imports: [
     BrowserModule,
