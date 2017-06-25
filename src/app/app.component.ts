@@ -7,7 +7,7 @@ import {MdMenuTrigger} from '@angular/material';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'app-movies';
   routes: Object[] = [
 {
 title: 'Top Movies',
