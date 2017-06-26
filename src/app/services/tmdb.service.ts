@@ -36,4 +36,19 @@ getTopMovies():Observable<any>{
 	});
 } 
 
+getUpcomingMovies():Observable<any>{
+    let url = 'movie/upcoming';
+	return this.http.get(`${this.baseUrl}${url}?api_key=${this.apiKey}`)
+	.map(response => {
+		return response.json().results; 
+	});
+} 
+
+getNowPlayingMovies():Observable<any>{
+    let url = 'movie/now_playing';
+	return this.http.get(`${this.baseUrl}${url}?api_key=${this.apiKey}`)
+	.map(response => {
+		return response.json().results; 
+	});
+} 
 }

@@ -23,6 +23,8 @@ import {HomeComponent} from './home/home.component'
 import {PopularMoviesComponent} from './popular-movies/popular-movies.component'
 import {PopularActorsComponent} from './popular-actors/popular-actors.component'
 import {TopMoviesComponent} from './top-movies/top-movies.component'
+import {UpcomingMoviesComponent} from './upcoming-movies/upcoming-movies.component'
+import {NowPlayingMoviesComponent} from './nowplaying-movies/nowplaying-movies.component'
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import {TopMoviesComponent} from './top-movies/top-movies.component'
     HomeComponent,
     PopularMoviesComponent,
     PopularActorsComponent,
-    TopMoviesComponent
+    TopMoviesComponent,
+    UpcomingMoviesComponent,
+    NowPlayingMoviesComponent
   ],
   imports: [
     BrowserModule,
