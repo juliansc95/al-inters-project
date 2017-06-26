@@ -12,6 +12,7 @@ import {MdTabsModule} from '@angular/material';
 import {MdButtonToggleModule} from '@angular/material';
 import {MdListModule} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { TmdbService } from './services/tmdb.service';
 import { TmdbImageService } from './services/tmdb-image.service';
@@ -21,6 +22,7 @@ import {NavbarComponent} from './navbar/navbar.component'
 import {HomeComponent} from './home/home.component'
 import {PopularMoviesComponent} from './popular-movies/popular-movies.component'
 import {PopularActorsComponent} from './popular-actors/popular-actors.component'
+import {TopMoviesComponent} from './top-movies/top-movies.component'
 
 
 @NgModule({
@@ -30,6 +32,7 @@ import {PopularActorsComponent} from './popular-actors/popular-actors.component'
     HomeComponent,
     PopularMoviesComponent,
     PopularActorsComponent,
+    TopMoviesComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,7 @@ import {PopularActorsComponent} from './popular-actors/popular-actors.component'
     MdTabsModule,
     MdButtonToggleModule,
     MdListModule,
+    BsDropdownModule.forRoot()
     
       ],
   providers: [TmdbService,

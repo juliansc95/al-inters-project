@@ -26,6 +26,14 @@ getPopularActors():Observable<any>{
 	.map(response => {
 		return response.json().results; 
 	});
-}  
+} 
+
+getTopMovies():Observable<any>{
+    let url = 'movie/top_rated';
+	return this.http.get(`${this.baseUrl}${url}?api_key=${this.apiKey}`)
+	.map(response => {
+		return response.json().results; 
+	});
+} 
 
 }

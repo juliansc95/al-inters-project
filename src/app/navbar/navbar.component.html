@@ -7,17 +7,38 @@
       </a>
     </div>
     <ul class="nav navbar-nav">
-      <li dropdown>
-        <a class="navbar-brand" href="#" >
+     <div class=btn-group dropdown>
+        <a class='btn dropdown-toggle' dropdownToggle>
           Movies
         </a>
-      </li>
-      <li dropdown>
-        <a href id="simple-dropdown" dropdownToggle>
+        <ul class="dropdown-menu" *dropdownMenu>
+          <li role="menuitem">
+            <a [routerLink]="['/popular-movies']" class="dropdown-item" >Popular movies</a>
+          </li>
+          <li role="menuitem">
+            <a [routerLink]="['/top-movies']"  class="dropdown-item" >Top movies</a>
+          </li>
+          <li role="menuitem">
+            <a class="dropdown-item" >Upcoming movies</a>
+          </li>
+          <li role="menuitem">
+            <a class="dropdown-item" >Now playing movies</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class=btn-group dropdown>
+        <a class='btn dropdown-toggle' dropdownToggle>
           Actors
         </a>
-      </li>
+        <ul class="dropdown-menu" *dropdownMenu>
+          <li role="menuitem">
+            <a [routerLink]="['/popular-actors']" class="dropdown-item" >Popular actors</a>
+          </li>
+        </ul>
+      </div>
     </ul>
+
     <form class="navbar-form navbar-left">
       <div class="input-group">
         <div class="searching">
