@@ -22,7 +22,7 @@ import { TmdbImageService } from './../services/tmdb-image.service';
 })
 export class ActorDetailComponent implements OnInit {
   
-  private person = []
+   person = []
   
   constructor(
     private tmdbService: TmdbService,
