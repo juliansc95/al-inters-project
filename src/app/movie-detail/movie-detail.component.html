@@ -23,7 +23,7 @@
 	<h3>Overview</h3>
 	<p align="justify">{{movie.overview}}</p>
   <div *ngIf="video">
-          <h2>{{video.name}} ({{video.type}})</h2>
+          <h3>{{video.name}} ({{video.type}})</h3>
           <iframe class="video" [src]="getUrlYoutube() | safe" width="560" height="315" frameborder="0" allowfullscreen></iframe>
         </div>
 	

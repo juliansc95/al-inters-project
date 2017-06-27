@@ -88,15 +88,11 @@ export class TmdbService {
 		}
 		return result;
 	}
-	search(query:string, specificSearch=""): Observable<any> {
-		let url = this.baseUrl+"/search"+specificSearch+"?api_key="+this.apiKey+"&query="+query;
-		console.log(url);
-		return this.http
-		           .get(url)
-		           .map(response => response.json().results);
-	}
 
+	
+	
 
 }
 
   
+ 

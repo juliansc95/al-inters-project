@@ -12,8 +12,7 @@ import { Router }            from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-    private searchPersonTerms = new Subject<string>(); //Observable
-    resultsPersons: Observable<any>; //  Response information of persons
+    
 
   
   constructor(
@@ -22,36 +21,8 @@ export class NavbarComponent implements OnInit {
     private tmdbImageService :TmdbImageService 
   ) { }
 
-  ngOnInit():void {this.resultsPersons = this.searchPersonTerms
-      .debounceTime(300)  
-      .distinctUntilChanged()  
-      .switchMap(term => this.test(term,'/person')) 
-      .catch(error => {
-        console.log(error);
-        return Observable.of<any>([]); 
-      });
+  ngOnInit() {
   }
-  
-  searchTerm(term: string): void {
-
-    this.searchPersonTerms.next(term);
-    
-  }
-
-  test(term: string, specificSearch=""){
-
-    return term ? this.tmdbService.search(term, specificSearch) : Observable.of<any>([])
-  }
-
-  goPopularActors(): void{
-    this.router.navigate(['/persons', 'popular']);
-  }
-  
-  goPopularMovies(): void{
-    this.router.navigate(['/movies', 'popular']);
-  }
-
-  
 
   
 }

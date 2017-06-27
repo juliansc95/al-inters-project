@@ -14,6 +14,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 
 
+
 import { AppComponent } from './app.component';
 import {NavbarComponent} from './navbar/navbar.component'
 import {HomeComponent} from './home/home.component'
@@ -63,4 +64,8 @@ import { TmdbImageService } from './services/tmdb-image.service';
   bootstrap: [AppComponent],
 
 })
+
+
 export class AppModule { }
+  
+
