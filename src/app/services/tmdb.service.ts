@@ -6,69 +6,72 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class TmdbService {
 
-//TMDB's endpoint for requests.
-baseUrl: string = "https://api.themoviedb.org/3/";
+	//TMDB's endpoint for requests.
+	baseUrl: string = "https://api.themoviedb.org/3/";
 
-apiKey: string = "8e195f7f265a22f1ffd3c6bac607452d";
+	apiKey: string = "8e195f7f265a22f1ffd3c6bac607452d";
 
-constructor(private http: Http) { }
+	constructor(private http: Http) { }
       
-getMovies():Observable<any>{
+	getMovies():Observable<any>{
     let urlPopular = 'movie/popular';
 	return this.http.get(`${this.baseUrl}${urlPopular}?api_key=${this.apiKey}`)
 	.map(response => {
 		return response.json().results; 
 	});
-}  
-getPopularActors():Observable<any>{
+	}  
+	getPopularActors():Observable<any>{
     let url = 'person/popular';
 	return this.http.get(`${this.baseUrl}${url}?api_key=${this.apiKey}`)
 	.map(response => {
 		return response.json().results; 
 	});
-} 
+	} 
 
-getTopMovies():Observable<any>{
+	getTopMovies():Observable<any>{
     let url = 'movie/top_rated';
 	return this.http.get(`${this.baseUrl}${url}?api_key=${this.apiKey}`)
 	.map(response => {
 		return response.json().results; 
 	});
-} 
+	} 
 
-getUpcomingMovies():Observable<any>{
+	getUpcomingMovies():Observable<any>{
     let url = 'movie/upcoming';
 	return this.http.get(`${this.baseUrl}${url}?api_key=${this.apiKey}`)
 	.map(response => {
 		return response.json().results; 
 	});
-} 
+	} 
 
-getNowPlayingMovies():Observable<any>{
+	getNowPlayingMovies():Observable<any>{
     let url = 'movie/now_playing';
 	return this.http.get(`${this.baseUrl}${url}?api_key=${this.apiKey}`)
 	.map(response => {
 		return response.json().results; 
 	});
-} 
+	} 
 
-getMovieDetail(id: number): Observable<Array<any>>{
+	getMovieDetail(id: number): Observable<Array<any>>{
 		return this.http.get(`${this.baseUrl}movie/${id}?api_key=${this.apiKey}`).map(response => response.json()); 
 		}
 	
 
-getMovieVideos(id: string): Observable<any>{
-		let videoUrl  = '/videos'; 
-		return this.http.get(`${this.baseUrl}movie/${id}${videoUrl}?api_key=${this.apiKey}`)
+	getMovieVideo(id: string): Observable<any>{
+		return this.http.get(`${this.baseUrl}movie/${id}/videos?api_key=${this.apiKey}`)
 		.map(response => {
 			return response.json().results; 
 		})	
 	}
-getActorDetail(id: number): Observable<Array<any>>{
+
+
+	
+ 
+	getActorDetail(id: number): Observable<Array<any>>{
 		return this.http.get(`${this.baseUrl}person/${id}?api_key=${this.apiKey}`).map(response => response.json()); 
 		}
 
-getGenderDisplay(id: number): string{
+	getGenderDisplay(id: number): string{
 		let result: string = "";
 		switch (id) {
 			case 1:
@@ -85,6 +88,14 @@ getGenderDisplay(id: number): string{
 		}
 		return result;
 	}
+	search(query:string, specificSearch=""): Observable<any> {
+		let url = this.baseUrl+"/search"+specificSearch+"?api_key="+this.apiKey+"&query="+query;
+		console.log(url);
+		return this.http
+		           .get(url)
+		           .map(response => response.json().results);
+	}
+
 
 }
 

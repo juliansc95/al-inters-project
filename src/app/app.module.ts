@@ -12,8 +12,7 @@ import {MdCardModule} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
-import { TmdbService } from './services/tmdb.service';
-import { TmdbImageService } from './services/tmdb-image.service';
+
 
 import { AppComponent } from './app.component';
 import {NavbarComponent} from './navbar/navbar.component'
@@ -25,6 +24,9 @@ import {UpcomingMoviesComponent} from './upcoming-movies/upcoming-movies.compone
 import {NowPlayingMoviesComponent} from './nowplaying-movies/nowplaying-movies.component'
 import {MovieDetailComponent} from './movie-detail/movie-detail.component'
 import {ActorDetailComponent} from './actor-detail/actor-detail.component'
+import {PipeSafe} from './movie-detail/pipe.safe'
+import { TmdbService } from './services/tmdb.service';
+import { TmdbImageService } from './services/tmdb-image.service';
 
 
 @NgModule({
@@ -39,6 +41,7 @@ import {ActorDetailComponent} from './actor-detail/actor-detail.component'
     NowPlayingMoviesComponent,
     MovieDetailComponent,
     ActorDetailComponent,
+    PipeSafe
   ],
   imports: [
     BrowserModule,

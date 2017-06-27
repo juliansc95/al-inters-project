@@ -22,6 +22,7 @@ import { TmdbImageService } from './../services/tmdb-image.service';
 export class MovieDetailComponent implements OnInit {
 
   movie = [];
+  video: any;
   // Here is the initialization.
   constructor(
   private tmdbService:TmdbService, 
@@ -35,9 +36,12 @@ export class MovieDetailComponent implements OnInit {
       .subscribe(movie => {
         this.movie = movie;
         
-      })
+      }),
+      this.route.params.switchMap((params: Params)=>this.tmdbService.getMovieVideo(params['id'])).subscribe(video => {
+          this.video = video[0];
+        })
   }
-
+ 
   /**
 	* This method return image's url of TMDB's API.
 	* @param {src} 
@@ -47,7 +51,9 @@ export class MovieDetailComponent implements OnInit {
 		return this.tmdbImageService.getImgUrl(src);
   }
 
-  
+  getUrlYoutube(): string {
+    return `https://www.youtube.com/embed/${this.video.key}`
+    }
 
   
 

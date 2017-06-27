@@ -7,7 +7,7 @@ export class TmdbImageService {
     
 	baseUrl: string = "http://image.tmdb.org/t/p/w300/";
 	
-	default:string = "assets/logo.png";
+	default:string = "assets/notfound.jpg";
   constructor() { }
 
 	

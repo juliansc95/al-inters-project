@@ -1,8 +1,7 @@
-
 <div class="row" *ngIf="movie">
 <div class="col-md-4 col-md-offset-1">
 <md-card class="movie-card">
-	<img md-card-image src="{{tmdbImageService.getImgUrl(movie.backdrop_path)}}">
+	<img  md-card-image src="{{tmdbImageService.getImgUrl(movie.backdrop_path)}}">
   <md-card-content>
   	<span *ngIf="movie.vote_average"><label>Average: </label>{{movie.vote_average}} </span>
   	<br>
@@ -23,6 +22,10 @@
 	<br>
 	<h3>Overview</h3>
 	<p align="justify">{{movie.overview}}</p>
+  <div *ngIf="video">
+          <h2>{{video.name}} ({{video.type}})</h2>
+          <iframe class="video" [src]="getUrlYoutube() | safe" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
 	
 
 </div>

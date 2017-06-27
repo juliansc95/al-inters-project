@@ -42,9 +42,15 @@
     <form class="navbar-form navbar-left">
       <div class="input-group">
         <div class="searching">
-          <input type="text" class="form-control" placeholder="Search an actor" >
+          <input #searchBox id="search-box" placeholder="Search an actor" (keyup)="searchTerm(searchBox.value)">
+          <div class="search-result" 
+                *ngFor="let result of resultsMovies | async | slice:0:7">
+          </div>
+
         </div>
       </div>
     </form>
   </div>
 </nav>
+
+ 
