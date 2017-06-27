@@ -1,8 +1,9 @@
+<div class= container>
 <h1>Now Playing Movies</h1>
-<div class="col-md-12" >
+<div class="row" >
     <div class="col-md-4" *ngFor="let movie of movies ">
          <a [routerLink]="['/movie', movie.id]" title="{{ movie.title }}" ng-if="movie.poster_path">
-        <img id="img-list" src="{{getImgUrl(movie.poster_path)}}" alt="Poster of movie: {{movie.original_title}}" width="50%" height="50%" />
+        <img id="img-list" src="{{getImgUrl(movie.poster_path)}}" alt="Poster of movie: {{movie.original_title}}" width="300px" height="450px" />
         <span class="subtittle">
            <p class="subtittle-text">
                {{movie.original_title}}
@@ -10,4 +11,5 @@
        </span>
         </a>    
     </div>
+</div>
 </div>

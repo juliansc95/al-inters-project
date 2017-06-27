@@ -51,4 +51,20 @@ getNowPlayingMovies():Observable<any>{
 		return response.json().results; 
 	});
 } 
+
+getMovieDetail(id: number): Observable<Array<any>>{
+		return this.http.get(`${this.baseUrl}movie/${id}?api_key=${this.apiKey}`).map(response => response.json()); 
+		}
+	
+
+getMovieVideos(id: string): Observable<any>{
+		let videoUrl  = '/videos'; 
+		return this.http.get(`${this.baseUrl}movie/${id}${videoUrl}?api_key=${this.apiKey}`)
+		.map(response => {
+			return response.json().results; 
+		})	
+	}
+
 }
+
+  

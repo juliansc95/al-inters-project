@@ -1,0 +1,30 @@
+
+<div class="row" *ngIf="movie">
+<div class="col-md-4">
+<md-card class="movie-card">
+	<img md-card-image src="{{tmdbImageService.getImgUrl(movie.backdrop_path)}}">
+  <md-card-content>
+  	<span *ngIf="movie.vote_average"><label>Average: </label>{{movie.vote_average}} </span>
+  	<br>
+  	<span *ngIf="movie.status"> <label>Status: </label>{{movie.status}}</span> 
+  	<br> 
+  	 <label *ngIf="movie.genres">Genres: </label>
+     <p *ngFor="let genre of movie.genres">{{genre.name}}</p>
+    <span *ngIf="movie.runtime"> <label>Runtime: </label>{{movie.runtime}}</span> minutes 
+    <br>
+    <span *ngIf="movie.production_companies"><label>Production companies: </label> <p *ngFor="let companie of movie.production_companies">{{companie.name}} <br></p></span>
+            
+  </md-card-content>
+</md-card>
+</div>
+
+<div class = "col-md-8">
+	<h1>{{movie.original_title}} ({{movie.release_date | date:'d'}}-{{movie.release_date | date:'MM'}}-{{movie.release_date | date:'yyyy'}})</h1>	
+	<br>
+	<h3>Overview</h3>
+	<p>{{movie.overview}}</p>
+
+
+</div>
+
+</div>

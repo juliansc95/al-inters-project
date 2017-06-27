@@ -6,11 +6,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MdButtonModule, MdCheckboxModule} from '@angular/material';
 import {MdMenuModule} from '@angular/material';
 import{MdIconModule} from '@angular/material';
-import {MdSidenavModule} from '@angular/material';
-import {MdToolbarModule} from '@angular/material';
-import {MdTabsModule} from '@angular/material';
-import {MdButtonToggleModule} from '@angular/material';
-import {MdListModule} from '@angular/material';
+import {MdCardModule} from '@angular/material';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
@@ -25,6 +23,7 @@ import {PopularActorsComponent} from './popular-actors/popular-actors.component'
 import {TopMoviesComponent} from './top-movies/top-movies.component'
 import {UpcomingMoviesComponent} from './upcoming-movies/upcoming-movies.component'
 import {NowPlayingMoviesComponent} from './nowplaying-movies/nowplaying-movies.component'
+import {MovieDetailComponent} from './movie-detail/movie-detail.component'
 
 
 @NgModule({
@@ -36,7 +35,8 @@ import {NowPlayingMoviesComponent} from './nowplaying-movies/nowplaying-movies.c
     PopularActorsComponent,
     TopMoviesComponent,
     UpcomingMoviesComponent,
-    NowPlayingMoviesComponent
+    NowPlayingMoviesComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -48,12 +48,8 @@ import {NowPlayingMoviesComponent} from './nowplaying-movies/nowplaying-movies.c
     MdCheckboxModule,
     MdIconModule,
     MdMenuModule,
-    MdSidenavModule,
-    MdToolbarModule,
-    MdTabsModule,
-    MdButtonToggleModule,
-    MdListModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    MdCardModule
     
       ],
   providers: [TmdbService,
