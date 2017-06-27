@@ -7,6 +7,7 @@ import {TopMoviesComponent} from './top-movies/top-movies.component'
 import {UpcomingMoviesComponent} from './upcoming-movies/upcoming-movies.component'
 import {NowPlayingMoviesComponent} from './nowplaying-movies/nowplaying-movies.component'
 import {MovieDetailComponent} from './movie-detail/movie-detail.component'
+import {ActorDetailComponent} from './actor-detail/actor-detail.component'
 
 const routes: Routes = [
    { path: '', component: HomeComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
    {path:'upcoming-movies', component:UpcomingMoviesComponent},
    {path:'nowplaying-movies',component:NowPlayingMoviesComponent},
    {path: 'movie/:id', component: MovieDetailComponent},
+   {path: 'person/:id', component: ActorDetailComponent},
 
 ];
 

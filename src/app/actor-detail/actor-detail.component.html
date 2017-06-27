@@ -1,0 +1,32 @@
+<div class="row" *ngIf="person">
+<div class="col-md-4 col-md-offset-1">
+<md-card class="person-card">
+	<img md-card-image src="{{tmdbImageService.getImgUrl(person.profile_path)}}">
+  <md-card-content>
+    <label>Personal Info</label>
+    <br>
+    <span *ngIf="person.gender"><label>Gender: </label> {{getGenderDisplay(person.gender)}}</span>
+    <br>
+    <span *ngIf="person.birthday"><label>Date of Birthday: </label> {{person.birthday}}</span>
+    <br>
+    <span *ngIf="person.place_of_birth"><label>Place of Birth: </label> {{person.place_of_birth}}</span>
+    <br>
+    <span *ngIf="person.homepage"><label>Official Site: </label> <a> {{person.homepage}}</a></span>
+    
+
+    
+            
+  </md-card-content>
+</md-card>
+</div>
+
+<div class = "col-md-6">
+	<h1>{{person.name}}</h1>	
+	<br>
+	<h3>Biography</h3>
+	<p align="justify">{{person.biography}}</p>
+	
+
+</div>
+
+</div> 

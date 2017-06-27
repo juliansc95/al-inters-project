@@ -64,6 +64,27 @@ getMovieVideos(id: string): Observable<any>{
 			return response.json().results; 
 		})	
 	}
+getActorDetail(id: number): Observable<Array<any>>{
+		return this.http.get(`${this.baseUrl}person/${id}?api_key=${this.apiKey}`).map(response => response.json()); 
+		}
+
+getGenderDisplay(id: number): string{
+		let result: string = "";
+		switch (id) {
+			case 1:
+				result = "Female";
+				break;
+			
+			case 2:
+				result = "Male";
+				break;
+
+			default:
+				result = "Unkown";
+				break;
+		}
+		return result;
+	}
 
 }
 

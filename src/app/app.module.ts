@@ -24,6 +24,7 @@ import {TopMoviesComponent} from './top-movies/top-movies.component'
 import {UpcomingMoviesComponent} from './upcoming-movies/upcoming-movies.component'
 import {NowPlayingMoviesComponent} from './nowplaying-movies/nowplaying-movies.component'
 import {MovieDetailComponent} from './movie-detail/movie-detail.component'
+import {ActorDetailComponent} from './actor-detail/actor-detail.component'
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {MovieDetailComponent} from './movie-detail/movie-detail.component'
     TopMoviesComponent,
     UpcomingMoviesComponent,
     NowPlayingMoviesComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    ActorDetailComponent,
   ],
   imports: [
     BrowserModule,
